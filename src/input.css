@@ -1,1 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
 @import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-bricolage: "Bricolage Grotesque", sans-serif;
+  --font-nunito: "Nunito", sans-serif;
+}
+
+/* Custom CSS lo */
+.animate-marquee {
+    animation: marquee 10s linear infinite;
+}
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+* {
+  border: 1px solid white;
+}

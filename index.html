@@ -1,32 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en" data-theme="dark">
+  <!-- Default light, toggle to dark -->
+  <head >
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>Amran Saleh Harahap - UP Studio</title>
     <link href="./dist/output.css" rel="stylesheet" />
-    <!-- Link ke CSS Tailwind -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Tailwind CSS -->
+
+    <!-- JS buat dark mode toggle -->
+    <script src="./script.js" defer></script>
   </head>
-  <body class="bg-gray-100 font-sans antialiased">
-    <header class="bg-blue-500 text-white p-6 text-center">
-      <h1 class="text-4xl font-bold">Selamat Datang di Portfolio Gue</h1>
-      <p class="mt-2 text-lg">Developer Pemula yang Keren</p>
-    </header>
-    <main class="container mx-auto py-8">
-      <section>
-        <h2 class="text-2xl font-semibold mb-4">Projects</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <!-- Card project -->
-          <div class="bg-white p-4 rounded-lg shadow-md">
-            <h3 class="text-xl font-bold">Project 1</h3>
-            <p>Deskripsi singkat.</p>
-          </div>
-          <!-- Tambah lebih banyak -->
-        </div>
-      </section>
-    </main>
-    <footer class="bg-gray-800 text-white p-4 text-center">
-      <p>&copy; 2025 [Nama Lo]</p>
-    </footer>
-  </body>
+
+  <body class="dark:bg-slate-900 max-w-sm mx-auto border-slate-50 border-2 h-screen"> <!-- Tambah max-w-sm mx-auto buat simulasi mobile width -->
+    
+    <!-- Navbar lo -->
+    <nav class="w-full h-14 bg-white dark:bg-slate-900 border-b border-purple-500 py-4 px-6 flex justify-between items-center">
+        <h2 class="text-md font-bricolage font-extrabold bg-gradient-to-r from-indigo-500 via-purple-500 to-fuchsia-500 bg-clip-text text-transparent w-fit">AMRAN SALEH</h2>
+        <button id="theme-toggle" class="hover:bg-indigo-950 dark:hover:bg-indigo-950 rounded-sm flex items-center justify-center h-fit w-fit px-2 py-1">
+            <span id="light-icon" class="hidden h-fit"><i class="fa-solid fa-sun bg-gradient-to-b from-indigo-500 via-purple-500 to-fuchsia-500 bg-clip-text text-transparent text-md py-2"></i></span> <!-- Sun for light mode -->
+            <span id="dark-icon"><i class="fa-solid fa-moon bg-gradient-to-b from-indigo-500 via-purple-500 to-fuchsia-500 bg-clip-text text-transparent text-md"></i></span> <!-- Moon for dark mode -->
+        </button>
+    </nav>
+
+    <!-- Tambah konten lain buat test, misalnya -->
+    <p class="text-white p-4">Ini konten test, liat width-nya udah kayak mobile gak?</p>
+</body>
 </html>

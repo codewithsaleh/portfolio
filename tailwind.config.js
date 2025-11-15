@@ -1,10 +1,12 @@
 module.exports = {
   content: [
-    './*.html',  // Scan semua HTML di root
-    './src/**/*.{html,js}'  // Kalo lo punya folder src
+    './*.html',
+    './src/**/*.{html,js}'
   ],
   theme: {
-    extend: {},
+    extend: {
+        darkMode: 'class',
+    }, // Kosongin atau hapus extend font
   },
   plugins: [],
 };
