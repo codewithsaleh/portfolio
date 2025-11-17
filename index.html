@@ -1,31 +1,208 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
-  <!-- Default light, toggle to dark -->
-  <head >
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amran Saleh Harahap - UP Studio</title>
-    <link href="./dist/output.css" rel="stylesheet" />
+<!-- Default light, toggle to dark -->
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Tailwind CSS -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amran Saleh Harahap - UP Studio</title>
+  <link href="./dist/output.css" rel="stylesheet" />
 
-    <!-- JS buat dark mode toggle -->
-    <script src="./script.js" defer></script>
-  </head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Tailwind CSS -->
 
-  <body class="dark:bg-slate-900 max-w-sm mx-auto border-slate-50 border-2 h-screen"> <!-- Tambah max-w-sm mx-auto buat simulasi mobile width -->
-    
-    <!-- Navbar lo -->
-    <nav class="w-full h-14 bg-white dark:bg-slate-900 border-b border-purple-500 py-4 px-6 flex justify-between items-center">
-        <h2 class="text-md font-bricolage font-extrabold bg-gradient-to-r from-indigo-500 via-purple-500 to-fuchsia-500 bg-clip-text text-transparent w-fit">AMRAN SALEH</h2>
-        <button id="theme-toggle" class="hover:bg-indigo-950 dark:hover:bg-indigo-950 rounded-sm flex items-center justify-center h-fit w-fit px-2 py-1">
-            <span id="light-icon" class="hidden h-fit"><i class="fa-solid fa-sun bg-gradient-to-b from-indigo-500 via-purple-500 to-fuchsia-500 bg-clip-text text-transparent text-md py-2"></i></span> <!-- Sun for light mode -->
-            <span id="dark-icon"><i class="fa-solid fa-moon bg-gradient-to-b from-indigo-500 via-purple-500 to-fuchsia-500 bg-clip-text text-transparent text-md"></i></span> <!-- Moon for dark mode -->
-        </button>
-    </nav>
+  <!-- JS buat dark mode toggle -->
+  <script src="./script.js" defer></script>
 
-    <!-- Tambah konten lain buat test, misalnya -->
-    <p class="text-white p-4">Ini konten test, liat width-nya udah kayak mobile gak?</p>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+
+<body class="dark:bg-slate-950 max-w-sm mx-auto border-slate-50 border overflow-y-scroll overflow-x-hidden">
+  <!-- Tambah max-w-sm mx-auto buat simulasi mobile width -->
+
+  <!-- Navbar lo -->
+  <nav class="w-full h-14 bg-white dark:bg-slate-950 py-4 px-6 flex justify-between items-center">
+    <h2 class="text-md font-extrabold gradient-to-r bg-clip-text text-transparent w-fit">
+      AMRAN SALEH
+    </h2>
+    <button id="theme-toggle"
+      class="hover:bg-slate-200 dark:hover:bg-indigo-950 rounded-md flex items-center justify-center h-fit w-fit px-2 border border-fuchsia-500">
+      <span id="light-icon" class="hidden h-fit"><i
+          class="fa-solid fa-sun gradient-to-b bg-clip-text text-transparent text-md py-2"></i></span>
+      <!-- Sun for light mode -->
+      <span id="dark-icon" class="h-fit"><i
+          class="fa-solid fa-moon gradient-to-b bg-clip-text text-transparent text-md py-2"></i></span>
+      <!-- Moon for dark mode -->
+    </button>
+  </nav>
+
+  <!-- Main -->
+  <main class="p-6 w-full min-h-screen h-screen flex flex-col items-center gap-4 overflow-hidden">
+    <img src="assets/ChatGPT Image Nov 15, 2025, 11_39_36 PM (1).png" alt="foto-saya" class="w-3xs drop-shadow-up" />
+    <h2 class="text-2xl font-extrabold text-fuchsia-100 uppercase">
+      Amran Saleh Harahap
+    </h2>
+
+    <div class="flex gap-2 items-center">
+      <p class="text-xl font-extrabold gradient-text ">
+        I'm
+      </p>
+
+      <div class="jobs gradient-bg-to-r px-2 py-1 rounded-sm font-bold text-slate-900 text-sm overflow-hidden w-48">
+        <div class="flex flex-nowrap animate-marquee gap-4 whitespace-nowrap">
+          <span>Creative UP Studio</span>
+          <span>Junior Frontend Web Developer</span>
+          <span>Co-Founder UP Studio</span>
+          <span>Graphic Designer</span>
+          <!-- Duplikat exact 1 set buat seamless loop -->
+          <span>Creative UP Studio</span>
+          <span>Junior Frontend Web Developer</span>
+          <span>Co-Founder UP Studio</span>
+          <span>Graphic Designer</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- About Me -->
+  <section class="about-me w-full p-6">
+    <div class="p-6 border-fuchsia-900 border-2 shadow-fuchsia-700 rounded-md">
+      <h2 class="text-lg gradient-text w-fit font-bold">
+        About Me
+      </h2>
+
+      <p class="text-sm text-slate-400 text-justify">
+        Saya adalah mahasiswa Teknik Informatika yang juga aktif bekerja
+        sebagai Creative di UP Studio. Saya memiliki minat besar di bidang
+        pengembangan website dan desain grafis. Saya berpengalaman membangun
+        website dari awal maupun memperbaiki website yang bermasalah. Di sisi
+        desain, saya sering mengerjakan pembuatan poster, flyer, dan spanduk
+        untuk kebutuhan media dan sosial media. Saya selalu berusaha
+        memberikan hasil terbaik melalui kreativitas dan pemahaman teknis yang
+        saya miliki.
+      </p>
+    </div>
+  </section>
+
+
+    <!-- Skill -->
+     <section class="card-skill w-full p-6">
+      
+      <div class=" border border-fuchsia-500 w-full rounded-lg p-6">
+        <h2 class="text-2xl font-extrabold gradient-text w-fit mb-6">Skills</h2>
+
+        <div class="bg-slate-950/90 backdrop-blur-sm rounded-xl space-y-4">
+      <h3 class="text-lg font-bold text-white mb-4 w-fit">Web Development</h3>
+
+      <!-- Dasar -->
+      <div class="space-y-3">
+        <h4 class="text-xs font-bold gradient-text">Fundamental</h4>
+        <div class="flex flex-wrap gap-4 justify-start">
+          <div class="group flex flex-col items-center gap-2 p-4 rounded-md gradient-bg text-slate-950 hover:shadow-2xl hover:shadow-fuchsia-500/50 transition-all duration-300 hover:scale-105"> <!-- Glow bg + scale -->
+            <i class="fa-brands fa-html5 text-3xl"></i>
+            <span class="text-[0.65rem] font-medium">HTML</span> <!-- Ukuran teks ikon disesuaikan lebih kecil -->
+          </div>
+          <div class="group flex flex-col items-center gap-2 p-4 rounded-md gradient-bg text-slate-950 hover:shadow-2xl hover:shadow-fuchsia-500/50 transition-all duration-300 hover:scale-105"> <!-- Glow bg + scale -->
+            <i class="fa-brands fa-css3-alt text-3xl"></i>
+            <span class="text-[0.65rem] font-medium">CSS</span> <!-- Ukuran teks ikon disesuaikan lebih kecil -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Logic & Interactive -->
+      <div class="space-y-3">
+        <h4 class="text-xs font-bold gradient-text">Logic & Interactive</h4>
+        <div class="flex flex-wrap gap-4 justify-start">
+          <div class="group flex flex-col items-center gap-2 p-4 rounded-md gradient-bg text-slate-950 hover:shadow-2xl hover:shadow-fuchsia-500/50 transition-all duration-300 hover:scale-105"> <!-- Glow bg + scale -->
+            <i class="fa-brands fa-php text-3xl"></i>
+            <span class="text-[0.65rem] font-medium">PHP</span> <!-- Ukuran teks ikon disesuaikan lebih kecil -->
+          </div>
+          <div class="group flex flex-col items-center gap-2 p-4 rounded-md gradient-bg text-slate-950 hover:shadow-2xl hover:shadow-fuchsia-500/50 transition-all duration-300 hover:scale-105"> <!-- Glow bg + scale -->
+            <i class="fa-brands fa-js text-3xl"></i>
+            <span class="text-[0.65rem] font-medium">JavaScript</span> <!-- Ukuran teks ikon disesuaikan lebih kecil -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Framework -->
+      <div class="space-y-3">
+        <h4 class="text-xs font-bold gradient-text">Framework</h4>
+        <div class="flex flex-wrap gap-4 justify-start">
+          <div class="group flex flex-col items-center gap-2 p-4 rounded-md gradient-bg text-slate-950 hover:shadow-2xl hover:shadow-fuchsia-500/50 transition-all duration-300 hover:scale-105"> <!-- Glow bg + scale -->
+            <i class="fa-brands fa-laravel text-3xl"></i>
+            <span class="text-[0.65rem] font-medium">Laravel</span> <!-- Ukuran teks ikon disesuaikan lebih kecil -->
+          </div>
+          <div class="group flex flex-col items-center gap-2 p-4 rounded-md gradient-bg text-slate-950 hover:shadow-2xl hover:shadow-fuchsia-500/50 transition-all duration-300 hover:scale-105"> <!-- Glow bg + scale -->
+            <i class="fa-brands fa-bootstrap text-3xl"></i>
+            <span class="text-[0.65rem] font-medium">Bootstrap</span> <!-- Ukuran teks ikon disesuaikan lebih kecil -->
+          </div>
+          <div class="group flex flex-col items-center gap-2 p-4 rounded-md gradient-bg text-slate-950 hover:shadow-2xl hover:shadow-fuchsia-500/50 transition-all duration-300 hover:scale-105"> <!-- Glow bg + scale -->
+            <img src="assets/tailwind-css.svg" alt="logo-tailwind" class="w-10 h-10">
+            <span class="text-[0.65rem] font-medium">Tailwind CSS</span> <!-- Ukuran teks ikon disesuaikan lebih kecil -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div class="space-y-3">
+        <h4 class="text-xs font-bold gradient-text">Tools & Setup</h4>
+        <div class="flex flex-wrap gap-4 justify-start">
+          <div class="group flex flex-col items-center gap-2 p-4 rounded-md gradient-bg text-slate-950 hover:shadow-2xl hover:shadow-fuchsia-500/50 transition-all duration-300 hover:scale-105"> <!-- Glow bg + scale -->
+            <i class="fa-solid fa-laptop-code text-3xl"></i>
+            <span class="text-[0.65rem] font-medium">VS Code</span> <!-- Ukuran teks ikon disesuaikan lebih kecil -->
+          </div>
+          <div class="group flex flex-col items-center gap-2 p-4 rounded-md gradient-bg text-slate-950 hover:shadow-2xl hover:shadow-fuchsia-500/50 transition-all duration-300 hover:scale-105"> <!-- Glow bg + scale -->
+            <i class="fa-brands fa-git-alt text-3xl"></i>
+            <span class="text-[0.65rem] font-medium">Git</span> <!-- Ukuran teks ikon disesuaikan lebih kecil -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-slate-950/90 backdrop-blur-sm rounded-xl space-y-4 mt-8">
+      <h3 class="text-lg font-bold text-white mb-4 w-fit">Media & Design</h3>
+
+      <div class="space-y-3">
+        <h4 class="text-xs font-bold gradient-text">Graphic Processing</h4>
+        <div class="flex flex-wrap gap-4 justify-start">
+          <div class="group flex flex-col items-center gap-2 p-4 rounded-md gradient-bg text-slate-950 hover:shadow-2xl hover:shadow-fuchsia-500/50 transition-all duration-300 hover:scale-105"> <!-- Glow bg + scale -->
+            <img src="assets/affinity-designer-svgrepo-com.svg" alt="logo-tailwind" class="w-10 h-10">
+            <span class="text-[0.65rem] font-medium">Affinity</span> <!-- Ukuran teks ikon disesuaikan lebih kecil -->
+          </div>
+          <div class="group flex flex-col items-center gap-2 p-4 rounded-md gradient-bg text-slate-950 hover:shadow-2xl hover:shadow-fuchsia-500/50 transition-all duration-300 hover:scale-105"> <!-- Glow bg + scale -->
+            <img src="assets/corel-draw-svgrepo-com.svg" alt="logo-tailwind" class="w-10 h-10">
+            <span class="text-[0.65rem] font-medium">CorelDRAW</span> <!-- Ukuran teks ikon disesuaikan lebih kecil -->
+          </div>
+          <div class="group flex flex-col items-center gap-2 p-4 rounded-md gradient-bg text-slate-950 hover:shadow-2xl hover:shadow-fuchsia-500/50 transition-all duration-300 hover:scale-105"> <!-- Glow bg + scale -->
+           <img src="assets/icons8-canva.svg" alt="logo-tailwind" class="w-10 h-10">
+            <span class="text-[0.65rem] font-medium">Canva</span> <!-- Ukuran teks ikon disesuaikan lebih kecil -->
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <h4 class="text-xs font-bold gradient-text">Editing Video</h4>
+        <div class="flex flex-wrap gap-4 justify-start">
+          <div class="group flex flex-col items-center gap-2 p-4 rounded-md gradient-bg text-slate-950 hover:shadow-2xl hover:shadow-fuchsia-500/50 transition-all duration-300 hover:scale-105"> <!-- Glow bg + scale -->
+            <img src="assets/capcut-svgrepo-com.svg" alt="logo-tailwind" class="w-10 h-10">
+            <span class="text-[0.65rem] font-medium">CapCut</span> <!-- Ukuran teks ikon disesuaikan lebih kecil -->
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+
+      </div>
+
+     </section>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
+
 </html>

@@ -10,15 +10,58 @@
   --font-nunito: "Nunito", sans-serif;
 }
 
+/* Custom utilities buat gradient reusable */
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-indigo-500 via-purple-500 to-fuchsia-500 bg-clip-text text-transparent;
+  }
+  .gradient-to-b {
+    background-image: linear-gradient(to bottom, #db2777, #a53bf6, #3b82f6); 
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .gradient-bg {
+    background-image: linear-gradient(to right, #db2777, #a53bf6, #3b82f6);
+  }
+
+  .gradient-bg-to-b {
+    background-image: linear-gradient(to bottom, #db2777, #a53bf6, #3b82f6);
+  }
+
+  .drop-shadow-up {
+    filter: drop-shadow(0 -5px 7px rgba(230, 0, 255, 0.5)); /* Shadow ke atas, warna purple-500/50, adjust y-offset (-10px) atau blur (10px) sesuka */
+  }
+  .drop-shadow-up-lg {
+    filter: drop-shadow(0 -15px 15px rgba(168, 85, 247, 0.5)); /* Versi lg lebih besar, kalo lo mau varian */
+  }
+
+  .icon-gradient {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(to right, #6366f1, #a855f7, #e879f9); /* indigo-500 → purple-500 → fuchsia-500 */
+    -webkit-mask-image: url('assets/tailwind-css.svg');
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-image: url('assets/tailwind-css.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+}
+
 /* Custom CSS lo */
 .animate-marquee {
     animation: marquee 10s linear infinite;
 }
 @keyframes marquee {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-397%); } /* Ubah ke -50% biar loop pas duplikat 1 set */
 }
 
 * {
-  border: 1px solid white;
+  /* border: 2px solid white; */
+  font-family: Bricolage Grotesque;
 }
