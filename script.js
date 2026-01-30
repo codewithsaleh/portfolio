@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const header = item.querySelector('.accordion-header');
     const content = item.querySelector('.accordion-content');
     const icon = header.querySelector('i');
-    
+
     header.addEventListener('click', function () {
       // Close all other accordions in academic tab
       academicAccordionItems.forEach(otherItem => {
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
           otherIcon.classList.remove('rotate-180');
         }
       });
-      
+
       // Toggle current accordion
       content.classList.toggle('hidden');
       icon.classList.toggle('rotate-180');
@@ -472,10 +472,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Update indicators
     Array.from(workIndicators).forEach((indicator, index) => {
-      indicator.classList.toggle('bg-fuchsia-500', index === workCurrentIndex);
-      indicator.classList.toggle('bg-gray-600', index !== workCurrentIndex);
+      if (index === workCurrentIndex) {
+        indicator.classList.remove('bg-gray-600', 'w-2');
+        indicator.classList.add('bg-fuchsia-500', 'w-8');
+      } else {
+        indicator.classList.remove('bg-fuchsia-500', 'w-8');
+        indicator.classList.add('bg-gray-600', 'w-2');
+      }
     });
   }
+
+  // Click indicators
+  Array.from(workIndicators).forEach((indicator) => {
+    indicator.addEventListener('click', () => {
+      const index = parseInt(indicator.getAttribute('data-index'));
+      if (index !== workCurrentIndex) {
+        workCurrentIndex = index;
+        updateWorkCarousel();
+      }
+    });
+  });
 
   // Touch/Swipe functionality
   let workStartX;
@@ -511,8 +527,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Update indicators
     Array.from(workIndicators).forEach((indicator, index) => {
-      indicator.classList.toggle('bg-fuchsia-500', index === workCurrentIndex);
-      indicator.classList.toggle('bg-gray-600', index !== workCurrentIndex);
+      if (index === workCurrentIndex) {
+        indicator.classList.remove('bg-gray-600', 'w-2');
+        indicator.classList.add('bg-fuchsia-500', 'w-8');
+      } else {
+        indicator.classList.remove('bg-fuchsia-500', 'w-8');
+        indicator.classList.add('bg-gray-600', 'w-2');
+      }
     });
   });
 
@@ -540,10 +561,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Update indicators
     Array.from(projectIndicators).forEach((indicator, index) => {
-      indicator.classList.toggle('bg-fuchsia-500', index === projectCurrentIndex);
-      indicator.classList.toggle('bg-gray-600', index !== projectCurrentIndex);
+      if (index === projectCurrentIndex) {
+        indicator.classList.remove('bg-gray-600', 'w-2');
+        indicator.classList.add('bg-fuchsia-500', 'w-8');
+      } else {
+        indicator.classList.remove('bg-fuchsia-500', 'w-8');
+        indicator.classList.add('bg-gray-600', 'w-2');
+      }
     });
   }
+
+  // Click indicators
+  Array.from(projectIndicators).forEach((indicator) => {
+    indicator.addEventListener('click', () => {
+      const index = parseInt(indicator.getAttribute('data-index'));
+      if (index !== projectCurrentIndex) {
+        projectCurrentIndex = index;
+        updateProjectCarousel();
+      }
+    });
+  });
 
   // Touch/Swipe functionality
   let projectStartX;
