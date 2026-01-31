@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="dark" class="overflow-x-hidden">
 
 <head>
   <meta charset="UTF-8" />
@@ -30,15 +30,15 @@
     <h2 class="text-md font-extrabold gradient-text bg-clip-text text-transparent w-fit">
       @salehrhp_
     </h2>
-    <!-- 
-    <button id="theme-toggle"
+    
+    <!-- <button id="theme-toggle"
       class="hover:bg-slate-200 dark:hover:bg-indigo-950 rounded-md flex items-center justify-center h-fit w-fit px-2 border border-fuchsia-500">
       <span id="light-icon" class="hidden h-fit"><i
           class="fa-solid fa-sun gradient-to-b bg-clip-text text-transparent text-md py-2"></i></span>
       <span id="dark-icon" class="h-fit"><i
           class="fa-solid fa-moon gradient-to-b bg-clip-text text-transparent text-md py-2"></i></span>
-    </button> 
-    -->
+    </button>  -->
+   
   </nav>
 
   <!-- Wrapper Row 1: Main & About Me -->
@@ -47,7 +47,7 @@
     <!-- Main -->
     <main
       class="p-6 w-full lg:w-1/2 min-h-screen lg:min-h-fit lg:h-auto flex flex-col items-center gap-4 overflow-hidden">
-      <img src="assets/amran_ilustation_picture.png" alt="foto-saya" class="w-3xs drop-shadow-up" data-aos="zoom-in" />
+      <img src="assets/amran_ilustation_picture.png" alt="foto-saya" class="w-48 drop-shadow-up" data-aos="zoom-in" />
       <h2 class="text-2xl font-extrabold text-fuchsia-100 uppercase" data-aos="fade-up">
         Amran Saleh Harahap
       </h2>
@@ -1768,7 +1768,7 @@
 
   <!-- Back to Top Button -->
   <button id="backToTop"
-    class="fixed bottom-20 right-8 gradient-bg text-white w-12 h-12 rounded-full shadow-lg shadow-fuchsia-500/30 flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:-translate-y-1 hover:shadow-xl z-50">
+    class="fixed bottom-8 right-8 gradient-bg text-white w-12 h-12 rounded-full shadow-lg shadow-fuchsia-500/30 flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:-translate-y-1 hover:shadow-xl z-50">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
 
@@ -1799,19 +1799,34 @@
     const footer = document.querySelector('footer');
 
     function updateButtonPosition() {
-      if (!footer) return;
-
-      const footerRect = footer.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-
-      // Check if footer is visible in viewport
-      // footerRect.top < viewportHeight means the footer has entered the viewport
-      if (footerRect.top < viewportHeight) {
+      // Toggle visibility based on scroll position
+      if (window.scrollY > 300) {
         backToTopBtn.classList.remove('opacity-0', 'invisible');
         backToTopBtn.classList.add('opacity-100', 'visible');
       } else {
         backToTopBtn.classList.add('opacity-0', 'invisible');
         backToTopBtn.classList.remove('opacity-100', 'visible');
+      }
+
+      // Avoid entering footer area
+      if (footer) {
+        const footerRect = footer.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+
+        // Calculate how much of the footer is visible in the viewport
+        const footerVisibleHeight = viewportHeight - footerRect.top;
+
+        // Default bottom position (tailwinds bottom-8 is usually 2rem = 32px)
+        const defaultBottom = 32;
+        const gap = 20; // Extra gap above footer
+
+        if (footerVisibleHeight > 0) {
+          // If footer is entering viewport, push button up
+          backToTopBtn.style.bottom = `${footerVisibleHeight + defaultBottom}px`;
+        } else {
+          // Reset to default
+          backToTopBtn.style.bottom = `${defaultBottom}px`;
+        }
       }
     }
 
