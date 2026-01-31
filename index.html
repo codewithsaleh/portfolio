@@ -1773,9 +1773,7 @@
   </button>
 
   <!-- Background Music -->
-  <audio id="bgMusic" loop muted autoplay>
-    <source src="assets/music/bg-music.mp3" type="audio/mpeg">
-  </audio>
+  
 
 
 
@@ -1840,24 +1838,7 @@
       });
     });
 
-    let musicStarted = false;
-    const bgMusic = document.getElementById('bgMusic');
-
-    bgMusic.volume = 0.5;
-
-    function startMusic() {
-      if (musicStarted) return;
-
-      bgMusic.muted = false;   // 🔥 INI KUNCINYA
-      bgMusic.play().then(() => {
-        musicStarted = true;
-        window.removeEventListener('scroll', startMusic);
-        document.removeEventListener('click', startMusic);
-      });
-    }
-
-    window.addEventListener('scroll', startMusic);
-    document.addEventListener('click', startMusic);
+    
 
 
 
