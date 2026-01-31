@@ -1768,7 +1768,7 @@
 
   <!-- Back to Top Button -->
   <button id="backToTop"
-    class="fixed bottom-8 right-8 gradient-bg text-white w-12 h-12 rounded-full shadow-lg shadow-fuchsia-500/30 flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:-translate-y-1 hover:shadow-xl z-50">
+    class="fixed bottom-20 right-8 gradient-bg text-white w-12 h-12 rounded-full shadow-lg shadow-fuchsia-500/30 flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:-translate-y-1 hover:shadow-xl z-50">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
 
@@ -1799,34 +1799,19 @@
     const footer = document.querySelector('footer');
 
     function updateButtonPosition() {
-      // Toggle visibility based on scroll position
-      if (window.scrollY > 300) {
+      if (!footer) return;
+
+      const footerRect = footer.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+
+      // Check if footer is visible in viewport
+      // footerRect.top < viewportHeight means the footer has entered the viewport
+      if (footerRect.top < viewportHeight) {
         backToTopBtn.classList.remove('opacity-0', 'invisible');
         backToTopBtn.classList.add('opacity-100', 'visible');
       } else {
         backToTopBtn.classList.add('opacity-0', 'invisible');
         backToTopBtn.classList.remove('opacity-100', 'visible');
-      }
-
-      // Avoid entering footer area
-      if (footer) {
-        const footerRect = footer.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
-
-        // Calculate how much of the footer is visible in the viewport
-        const footerVisibleHeight = viewportHeight - footerRect.top;
-
-        // Default bottom position (tailwinds bottom-8 is usually 2rem = 32px)
-        const defaultBottom = 32;
-        const gap = 20; // Extra gap above footer
-
-        if (footerVisibleHeight > 0) {
-          // If footer is entering viewport, push button up
-          backToTopBtn.style.bottom = `${footerVisibleHeight + defaultBottom}px`;
-        } else {
-          // Reset to default
-          backToTopBtn.style.bottom = `${defaultBottom}px`;
-        }
       }
     }
 
