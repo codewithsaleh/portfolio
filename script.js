@@ -547,7 +547,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const projectIndicators = document.getElementById('projectCarouselIndicators').children;
 
   let projectCurrentIndex = 0;
-  const projectTotalSlides = 6;
+  const projectTotalSlides = 7;
 
   function updateProjectCarousel() {
     // Dapatkan lebar card + gap secara dinamis
